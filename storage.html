@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage</title>
+    <link rel="stylesheet" href="storage_style.css">
+</head>
+<body>
+    <div class="main">
+        <div class ="main2">
+    <p>Local count:<div id="local" class="local"></div></p><button id="button1" onclick="incrementLocal()">Increment</button>
+    <p>Session count:<div id="session" class="session"></div></p><button id="button1" onclick="incrementSession()">Increment</button>
+    <button id="button" class="reset" onclick="reset()">Reset</button>
+    </div>
+</div>
+    <script>
+        const lcount=localStorage.getItem("count");
+        const scount=sessionStorage.getItem("count");
+        const local=document.getElementById("local");
+        const session=document.getElementById("session");
+        if(lcount==0)
+        local.innerText=0;
+        else
+        local.innerText=lcount;
+        if(scount==0)
+        session.innerText=0;
+        else
+        session.innerText=scount;
+        function incrementLocal(){
+            const count=localStorage.getItem("count");
+            const c=Number(1);
+            if(!count){
+                localStorage.setItem("count",c);
+                local.innerText=1;
+            }
+            else{
+                local.innerText=Number(count)+1
+                localStorage.setItem("count",Number(count)+1);
+            }
+        }
+        function incrementSession(){
+            const count=sessionStorage.getItem("count");
+            const c=Number(1);
+            if(!count){
+                sessionStorage.setItem("count",c);
+                session.innerText=1;
+            }
+            else{
+                session.innerText=Number(count)+1
+                sessionStorage.setItem("count",Number(count)+1);
+            }
+        }
+        function reset(){
+            
+            if(confirm("do you want to clear storage ?")){
+                localStorage.clear();
+                sessionStorage.clear();
+                local.innerText=0;
+                session.innerText=0;
+            }
+           
+        }
+        window.onload = function () {
+	         sessionStorage.clear();
+            //sessionStorage.removeItem('key');
+            session.innerText=0;
+            local.innerText=Number(count);
+
+        }
+    </script>
+</body>
+</html>
