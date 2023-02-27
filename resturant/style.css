@@ -1,0 +1,259 @@
+
+
+body
+{
+    margin:0;
+    padding:0;
+    overflow: hidden;
+}
+
+#restaurant
+{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+#table
+{
+    height: 100%;
+    flex:20%;
+    border-right: 2px solid black;
+}
+
+#menu
+{
+    height: 100%;
+    flex:80%;
+    border-left: 2px solid black;
+    overflow-y: scroll;
+}
+
+h4
+{
+    text-align: center;
+}
+
+.input
+{
+    height: 2rem;
+    margin-left:1rem;
+    border:none;
+    box-shadow: 1px 3px 5px gray;
+    border-radius: 2px;
+    font-size:x-small;
+    font-family:Arial, Helvetica, sans-serif;
+    outline: none;
+}
+
+#menu-search
+{
+    width: 50%;
+}
+
+#tables
+{
+    height:100%;
+    list-style-type: none; 
+    padding:0 5%;
+    
+}
+
+#tables li
+{
+    width:90%;
+    height:12%;
+    margin-bottom: 3%;
+    box-shadow: 1px 3px 5px gray;
+    cursor: pointer;
+
+}
+#tables li:hover{
+    background-color: rgb(189, 233, 235);
+}
+
+#tables li h2
+{
+    margin:0;
+    padding:4.5%;
+}
+
+#tables li p
+{
+    margin:0;
+    padding:3%;
+    padding-left:4.5%;
+}
+
+#menu-items
+{
+    height:100%;
+    list-style-type: none; 
+    padding:0 2%;
+    
+}
+
+#menu-items li
+{
+    width:90%;
+    height:12%;
+    margin-bottom: 1%;
+    box-shadow: 1px 3px 5px rgb(203, 199, 199);
+    
+
+}
+#menu-items li:hover
+{
+    background-color: rgb(139, 134, 134);
+}
+
+#menu-items li h2
+{
+    margin:0;
+    padding:1%;
+    padding-bottom: 0;
+}
+
+#menu-items li p
+{
+    margin:0;
+    padding:1%;
+}
+
+#menu-items li #category
+{
+    font-size: small;
+    padding:0px;
+    padding-left: 1%;
+}
+
+
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin:0.7rem;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #f21a1a;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+#modal-header
+{
+    color: white;
+    width:100%;
+    height:15%;
+    background-color: #3D4EAE;
+}
+
+#modal-header h3
+{
+    margin: 1rem 1rem;
+    float:left;
+}
+
+#rows tr
+{
+    width:100%;
+    margin:3rem;
+}
+
+#rows th,#rows td
+{
+    width:20%;
+    text-align: center;
+}
+
+#rows td input
+{
+    border:none;
+    border-bottom: 2px solid #3D4EAE;
+    outline: none;
+    text-align: center;
+
+}
+
+#delete
+{
+    margin:0 0.5rem;
+}
+
+#total
+{
+    text-align: center;
+    position: absolute;
+    bottom: 8%;
+    right: 50%;
+}
+
+#bill
+{
+    cursor: pointer;
+    font-weight: bold;
+    position: absolute;
+    bottom:0;
+    right:1rem;
+}
+
+.cre{
+    height: 100%;
+    width: 100%;
+    background: #38f0f0;
+    border: 4px solid black;
+    position: fixed;
+    top:0;
+    left: 0;
+    opacity: 0.2;
+    
+    pointer-events: none;
+}
+.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+.modal {
+    
+    display: none;
+    width: 100%; 
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+   
+
+
+   
+  }
+.modal-content{
+    height: 50%;
+    width: 50%;
+    border: 3px solid black;
+    position: relative;
+   
+    
+    background-color: #F5F5F5;
+    overflow-y: auto;
+    left: 23%;
+    top: 20%;
+}
+
+.btn {
+    background-color: rgb(3, 95, 187); /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 5px 10px; /* Some padding */
+    font-size: 19px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+  }
+  
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: rgb(136, 163, 244);
+  }
