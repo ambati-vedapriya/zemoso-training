@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Assingment</title>
+</head>
+
+<body>
+    <button onclick="funcparameter('Veda',inside)">Click me!</button><br>
+    
+    <script>
+            function inside(user){
+                    document.write('Hai ' + user);
+                }
+                function funcparameter(user,func){
+                    inside(user);
+                }
+            var getAbbrivation = (firstName,lastName)=> firstName[0]+lastName[0];
+            document.write("The first 2 starting letters of the word"+"<br>")
+            document.write(getAbbrivation("Veda","Priya")+"<br>");
+            document.write(getAbbrivation("hello","everyone")+"<br>");
+    </script>
+
+</body>
+</html>
