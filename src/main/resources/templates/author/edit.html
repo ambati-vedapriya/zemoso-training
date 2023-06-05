@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Edit Author</title>
+</head>
+<body>
+<div class="container">
+<p class="h4 mb-4">Edit Author</p>
+    <hr>
+
+<form th:object="${author}" th:action="@{/authors/edit/{id}(id=${author.id})}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <label>Name: <input type="text" th:field="*{name}" /></label>
+    <br>
+    <br>
+
+    <input type="hidden" th:field="*{id}" />
+    <label>Email: <input type="text" th:field="*{email}" /></label>
+    <br>
+
+    <!--<label>Books:
+        <select th:field="*{books}" multiple="multiple">
+            <option th:each="book : ${books}" th:value="${book}" th:text="${book.title}"></option>
+        </select>
+    </label>-->
+    <br>
+    <button type="submit" class="btn btn-info col-2">Save</button>
+</form>
+<br>
+<a href="/authors">Back to Author List</a>
+</div>
+</body>
+</html>
