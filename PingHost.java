@@ -15,9 +15,7 @@ public class PingHost {
             String command = "";
             if (System.getProperty("os.name").startsWith("Windows")) {
                 command = "ping -n 5 " + host; // Windows command
-            } //else {
-            //command = "ping -c 5 " + host; // Linux/Unix/Mac command
-            //}
+            } 
             Process process = Runtime.getRuntime().exec(command);
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line;
