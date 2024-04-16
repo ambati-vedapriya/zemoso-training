@@ -1,0 +1,1 @@
+url=/home/veda/SerializerDjango/core/user/admin.py
