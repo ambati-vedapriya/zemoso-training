@@ -1,0 +1,56 @@
+
+{% extends "base.html" %}
+{% block start %}
+    <h3>Django is a back-end server side web framework.</h3>
+    <a href="/contact/">
+     Contact
+    </a>
+    |
+    <a href="/about/">
+        About
+    </a>
+    
+
+    <table class="container">
+        <tr>
+          <th>S.no</th>
+          <th>Name</th>
+          <th> age</th>
+          <th>Can vote</th>
+        </tr>
+        {% for people in peoples %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{people.name}}</td>
+          <td>{{people.age}}</td>
+          <td {% if people.age < 18 %} style="color: red;" {% endif %}>
+            {% if people.age >= 18 %}
+                OK 
+            {% else %}
+                NOT OK
+            {% endif %}
+        </td>
+        
+        </tr>
+        {% endfor %}
+      </table>
+
+      {{text|truncatechars:55}}
+
+      <p>
+        {% if "tomato" in vegetables %}
+            Yes Available
+        {% elif "can" in vegetables %}
+            Yes Available can
+        {% else %}
+            Not Available
+        {% endif %}
+    </p>
+
+    <p>
+        {{vegetables.firstof}}
+    </p>
+    
+    
+{% endblock %}
+

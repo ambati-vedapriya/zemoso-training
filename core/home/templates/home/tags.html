@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+{% autoescape off %}
+  <h1>{{ heading }}</h1>
+{% endautoescape %}
+
+{% autoescape on %}
+  <h1>{{ heading|escape }}</h1>
+{% endautoescape %}
+
+<p>Check out views.py to see what the heading variable looks like.</p>
+
+</body>
+</html>                  
